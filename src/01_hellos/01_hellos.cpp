@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain(int /*argc*/, _TCHAR* /*argv*/[])
 {
-	return 0;
+    int returnCode(0);
+	return returnCode;
 }
