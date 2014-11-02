@@ -1,7 +1,8 @@
-#include "stdafx.h"
+#include <tchar.h>
+#include <iostream>
 
 int _tmain(int /*argc*/, _TCHAR* /*argv*/[])
 {
-    int returnCode(0);
-	return returnCode;
+    std::wcout << L"hello cpp" << std::endl;
+    return 0;
 }
