@@ -60,7 +60,7 @@ std::vector <std::wstring> GetPrinterNames() {
 	return printerNames;
 }
 
-int _tmain(int /*argc*/, _TCHAR* /*argv*/[])
+int main()
 {
 	const auto printerNames = GetPrinterNames();
 	std::wcout << printerNames.size() << " printers installed:" << std::endl;
