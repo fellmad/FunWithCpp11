@@ -22,7 +22,7 @@
     <ProjectGuid>{2BA3E58E-7051-480F-BDC9-B33EA60FC7CF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>enumprinters</RootNamespace>
-    <ProjectName>04_enumprinters</ProjectName>
+    <ProjectName>enumprinters</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
