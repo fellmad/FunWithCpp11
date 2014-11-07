@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<psf:PrintTicket xmlns:psf="http://schemas.microsoft.com/windows/2003/08/printing/printschemaframework" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1" xmlns:psk="http://schemas.microsoft.com/windows/2003/08/printing/printschemakeywords" xmlns:ns0000="http://schemas.datacard.com/2009/09/printing/XPS_Card_Printer">
+  <psf:ParameterInit name="psk:JobCopiesAllDocuments">
+    <psf:Value xsi:type="xsd:integer">1</psf:Value>
+  </psf:ParameterInit>
+  <psf:Feature name="psk:PageMediaSize">
+    <psf:Option name="ns0000:ID1">
+      <psf:ScoredProperty name="psk:MediaSizeWidth">
+        <psf:Value xsi:type="xsd:integer">54160</psf:Value>
+      </psf:ScoredProperty>
+      <psf:ScoredProperty name="psk:MediaSizeHeight">
+        <psf:Value xsi:type="xsd:integer">85910</psf:Value>
+      </psf:ScoredProperty>
+    </psf:Option>
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobLocale">
+    <psf:Option name="ns0000:English_United_States" />
+  </psf:Feature>
+  <psf:Feature name="psk:PageOrientation">
+    <psf:Option name="psk:Portrait" />
+  </psf:Feature>
+  <psf:Feature name="psk:PageOutputColor">
+    <psf:Option name="psk:Color">
+      <psf:ScoredProperty name="psk:DeviceBitsPerPixel">
+        <psf:Value xsi:type="xsd:integer">24</psf:Value>
+      </psf:ScoredProperty>
+      <psf:ScoredProperty name="psk:DriverBitsPerPixel">
+        <psf:Value xsi:type="xsd:integer">24</psf:Value>
+      </psf:ScoredProperty>
+    </psf:Option>
+  </psf:Feature>
+  <psf:Feature name="psk:PageResolution">
+    <psf:Option name="ns0000:_300_DPI">
+      <psf:ScoredProperty name="psk:ResolutionX">
+        <psf:Value xsi:type="xsd:integer">300</psf:Value>
+      </psf:ScoredProperty>
+      <psf:ScoredProperty name="psk:ResolutionY">
+        <psf:Value xsi:type="xsd:integer">300</psf:Value>
+      </psf:ScoredProperty>
+    </psf:Option>
+  </psf:Feature>
+  <psf:Feature name="psk:JobDuplexAllDocumentsContiguously">
+    <psf:Option name="psk:OneSided" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:PageFrontPrintAndTopcoat">
+    <psf:Option name="ns0000:All" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:PageFrontTopcoatException">
+    <psf:Option name="ns0000:ISO_7816_ContactedSmartCard" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:PageBackPrintAndTopcoat">
+    <psf:Option name="ns0000:All" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:PageBackTopcoatException">
+    <psf:Option name="ns0000:ISO3_TrackMagneticStripe" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:DocumentEncodeOnly">
+    <psf:Option name="ns0000:OFF" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:DocumentForceBarCodestoMonochrome">
+    <psf:Option name="ns0000:OFF" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:DocumentPrintBlackImagePixelsUsingMonochrome">
+    <psf:Option name="ns0000:OFF" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:PageFlipFront">
+    <psf:Option name="ns0000:None" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:PageFlipBack">
+    <psf:Option name="ns0000:None" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobPrintMode">
+    <psf:Option name="ns0000:Standard" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobPrintModeCustomColorDpi">
+    <psf:Option name="ns0000:_300x300" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobPrintModeCustomMonochromeDpi">
+    <psf:Option name="ns0000:_300x300" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:DocumentRibbonType">
+    <psf:Option name="ns0000:YMCKFT" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:DocumentSplitRibbonPanels">
+    <psf:Option name="ns0000:No" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobUseMultiHopperSlot">
+    <psf:Option name="ns0000:Hopper1" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:DocumentTextClipping">
+    <psf:Option name="ns0000:Normal" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:PageFrontCustomTopcoatBitmap">
+    <psf:Option name="ns0000:None" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:PageBackCustomTopcoatBitmap">
+    <psf:Option name="ns0000:None" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobLamination1Options">
+    <psf:Option name="ns0000:Donotapply" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobLamination2Options">
+    <psf:Option name="ns0000:Donotapply" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobDebowCard">
+    <psf:Option name="ns0000:OFF" />
+  </psf:Feature>
+  <psf:Feature name="ns0000:JobImpressCard">
+    <psf:Option name="ns0000:None" />
+  </psf:Feature>
+</psf:PrintTicket>
