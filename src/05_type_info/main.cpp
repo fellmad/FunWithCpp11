@@ -10,7 +10,7 @@ class A {
 
 class B : public A {};
 
-int _tmain(int /*argc*/, _TCHAR* /*argv*/[])
+int _tmain()
 {
 	auto a = A();
 	std::cout << typeid(A).name() << std::endl;
@@ -23,7 +23,7 @@ int _tmain(int /*argc*/, _TCHAR* /*argv*/[])
 	std::cout << typeid(std::wstring).name() << std::endl;
 	std::cout << typeid(std::cout).name() << std::endl;
 
-	std::cout << std::endl << "Press any key !";
+	std::cout << std::endl << "Press any key. Do it.";
 	getchar();
 
 	return 0;
