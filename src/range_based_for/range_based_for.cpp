@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-template<typename T>
+template <typename T>
 std::ostream& operator<< (std::ostream& os, const std::vector<T>& vec)
 {
     for (auto& el : vec) {
@@ -17,7 +17,9 @@ int main()
         "hello",
         "from",
         __FILE__,
+        "msc version:",
         std::to_string(_MSC_VER),
+        "msc full version:",
         std::to_string(_MSC_FULL_VER),
         "dude."
     };
