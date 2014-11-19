@@ -1,7 +1,6 @@
-#include <tchar.h>
 #include <iostream>
 
-int _tmain(int /*argc*/, _TCHAR* /*argv*/[])
+int main()
 {
     std::wcout << L"hello cpp" << std::endl;
     return 0;

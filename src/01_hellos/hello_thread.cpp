@@ -2,18 +2,16 @@
 #include <thread>
 #include <string>
 
-int sayHello(std::string const &message, const short sleep_for_this_many_seconds)
+void sayHello(std::string const &message, const short sleep_for_this_many_seconds)
 {
-    std::chrono::seconds sleepSecs(sleep_for_this_many_seconds);
+    const std::chrono::seconds sleepSecs(sleep_for_this_many_seconds);
 
     std::cout
-            << "thread " << std::this_thread::get_id() << " sleeping for "
-            << sleepSecs.count() << " seconds." << std::endl
-            << "message: " << message << std::endl;
+        << "thread " << std::this_thread::get_id() << " sleeping for "
+        << sleepSecs.count() << " seconds." << std::endl
+        << "message: " << message << std::endl;
 
     std::this_thread::sleep_for(sleepSecs);
-
-    return 123;
 }
 
 int main()

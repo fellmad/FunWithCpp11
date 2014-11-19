@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int main()
 {
 	printf("yo. hello from %s\n", __FILE__);
