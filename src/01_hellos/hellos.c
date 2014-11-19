@@ -1,6 +1,4 @@
-#include <tchar.h>
-
-int _tmain(int argc, _TCHAR* argv[])
+int main()
 {
 	printf("yo. hello from %s\n", __FILE__);
 	return 0;

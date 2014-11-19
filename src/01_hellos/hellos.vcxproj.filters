@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="01_hellos.c">
+    <ClCompile Include="hellos.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="01_hellos.cpp">
+    <ClCompile Include="hellos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="01_hellos_11.cpp">
+    <ClCompile Include="hellos_11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hello_threads.cpp">
+    <ClCompile Include="hello_thread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
