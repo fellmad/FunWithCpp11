@@ -1,7 +1,11 @@
-#include <windows.h>
-#include <tchar.h>
 #include <string>
 #include <iostream>
+
+auto multiply_two_ints(const int& a, const int& b) -> int
+{
+	const int result = a * b;
+	return result;
+}
 
 class A {
 	std::string a;
@@ -10,9 +14,10 @@ class A {
 
 class B : public A {};
 
-int _tmain()
+int main()
 {
 	auto a = A();
+
 	std::cout << typeid(A).name() << std::endl;
 	std::cout << typeid(a).name() << std::endl;
 
@@ -23,7 +28,9 @@ int _tmain()
 	std::cout << typeid(std::wstring).name() << std::endl;
 	std::cout << typeid(std::cout).name() << std::endl;
 
-	std::cout << std::endl << "Press any key. Do it.";
+	std::cout << typeid(multiply_two_ints).name() << std::endl;
+ 
+ 	std::cout << std::endl << "Press any key. Do it.";
 	getchar();
 
 	return 0;
