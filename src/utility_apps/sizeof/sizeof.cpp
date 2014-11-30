@@ -1,7 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 // sizeof different data types
 ///////////////////////////////////////////////////////////////////////////////
-#include "stdafx.h"
 #include <afx.h>
 #include <iomanip>
 #include <wtypes.h>
@@ -21,7 +20,7 @@
    std::cout << #typ << sizeof(typ) << std::endl; \
 }
 
-int _tmain(int /*argc*/, _TCHAR* /*argv*/[])
+int main()
 {
 #ifdef _WIN64
     std::cout << "sizeof C++ data types (64-bit):" << std::endl << std::endl;
@@ -88,6 +87,8 @@ int _tmain(int /*argc*/, _TCHAR* /*argv*/[])
     dumpsize(signed long);
     dumpsize(long double);
     dumpsize(long int);
+    dumpsize(long long);            // c++11
+    dumpsize(unsigned long long);   // c++11
     dumpsize(long);
     dumpsize(LONG_PTR);
     dumpsize(LPBYTE);
