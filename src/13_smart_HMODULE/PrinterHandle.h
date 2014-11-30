@@ -1,10 +1,11 @@
 #include <string>
 #include <memory>
 #include <windows.h>
+#include <winspool.h>
 
-class module {
+class PrinterHandle{
 public:
-    explicit module(std::wstring const& name)
+    explicit PrinterHandle(std::wstring const& name)
         : handle {::LoadLibrary(name.c_str()), &::FreeLibrary}
     {}
 
