@@ -5,6 +5,7 @@
 #include <assert.h> // not C++ standard
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 #pragma comment(lib, "winspool.lib")  // MS pragmas: http://msdn.microsoft.com/en-us/library/d9x1s805.aspx
 
@@ -14,7 +15,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 std::vector <std::wstring> GetPrinterNames()
 {
-
     // 1) get size needed for printernames buffer:
     const DWORD flags = PRINTER_ENUM_LOCAL | PRINTER_ENUM_NETWORK | PRINTER_ENUM_CONNECTIONS;
     DWORD neededByteCount(0);
@@ -68,5 +68,14 @@ int main()
     for (auto printerName : printerNames) {
         std::wcout << " " << printerName << std::endl;
     }
+
+    // fun: is "Microsoft XPS Document Writer" installed?
+    const std::wstring msXpsDocWriterName {L"Microsoft XPS Document Writer"};
+    auto result = std::find(printerNames.cbegin(), printerNames.cend(), msXpsDocWriterName);
+    if (printerNames.cend() != result) {
+        std::cout << std::endl;
+        std::wcout << "found " << msXpsDocWriterName << std::endl;
+    }
+
     return 0;
 }
