@@ -3,11 +3,11 @@
 
 int main()
 {
-    // std::regex pathSplitRegex("\\s*[;]+\\s*");       // old: ugly escapes: \\
+    // std::regex pathSplitRegex("\\s*[;]+\\s*");   // old: ugly escapes: \\
 
-    std::regex pathSplitRegex(R"(\s*[;]+\s*)"); // c++11 raw literal
+    std::regex pathSplitRegex(R"(\s*[;]+\s*)");     // c++11 raw literal
 
-    std::string path = R"(c:\temp; d:\temp; c:\tmep\123 abc; )";
+    std::string path = R"(c:\temp;d:\temp;c:\temp\123 abc;f:/a/b/c/d/j.txt;x:\y/z\w)";
 
     std::vector <std::string> folderNames;
 
