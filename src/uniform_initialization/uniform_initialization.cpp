@@ -21,11 +21,22 @@ int main()
     const auto& xPosition = std::find(bytes.cbegin(), bytes.cend(), 'x');
     bytes.insert(xPosition + 1, 'y');
 
-    for (const auto& aByte : bytes) {
-        const int& aNumericValue = aByte;   // ok; not narrowed
+    for (const auto& the_byte : bytes) {
+        const int& aNumericValue = the_byte;   // ok; not narrowed
         std::cout << std::hex << std::setw(4) << aNumericValue << " " <<
             std::dec << std::setw(4) << aByte << std::endl;
     }
+
+    // we had this in our sdk samples:
+    std::vector <byte> sendBytes;
+    sendBytes.push_back(0x00);
+    sendBytes.push_back(0xC0);
+    sendBytes.push_back(0x00);
+    sendBytes.push_back(0x00);
+    sendBytes.push_back(0x12);
+
+    // better; just like the C# sample:
+    std::vector <byte> sendBytes2 {0x00,0xC0,0x00,0x00,0x12};
 
     return 0;
 }
