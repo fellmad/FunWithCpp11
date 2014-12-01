@@ -2,6 +2,8 @@
 #include <iostream>
 #include <iomanip>
 
+// compile with /EHsc, and /Fa to see .ASM output.
+
 int main()
 {
     char c1 = 1.234e12;  // warning: C4244: 'initializing' : conversion from 'double' to 'char', possible loss of data
@@ -24,7 +26,7 @@ int main()
     for (const auto& the_byte : bytes) {
         const int& aNumericValue = the_byte;   // ok; not narrowed
         std::cout << std::hex << std::setw(4) << aNumericValue << " " <<
-            std::dec << std::setw(4) << aByte << std::endl;
+            std::dec << std::setw(4) << the_byte << std::endl;
     }
 
     // we had this in our sdk samples:
@@ -37,6 +39,11 @@ int main()
 
     // better; just like the C# sample:
     std::vector <byte> sendBytes2 {0x00,0xC0,0x00,0x00,0x12};
+
+    // any difference here? view .ASM:
+    short y0 = -123;
+    short y1 = {-123};
+    short y2 {-123};
 
     return 0;
 }
