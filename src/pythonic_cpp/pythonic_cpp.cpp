@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include <functional>
+#include <iterator>
 
 int main()
 {
@@ -81,6 +82,7 @@ int main()
     // You can do the same thing in C++ using std::tie:
     short i, j, k;
     std::tie(i, j, k) = triple;
+    std::cout << "-------------- tie: " << std::endl;
     std::cout << "i, j, k: " << i << ", " << j << ", " << k << std::endl;
 
     // Uniform Initialization
@@ -94,6 +96,10 @@ int main()
     // expression as well:
     auto myList = std::vector < int > { 6, 3, 7, 8 };
     myList.push_back(5);
+    std::cout << "-------------- uniform initialization: " << std::endl;
+    for (const auto& listItem : myList) {
+        std::cout << " " << listItem << std::endl;
+    }
 
     // In Python, you can also create a dictionary with a single expression:
     //  myDict = {5: "foo", 6: "bar"}
@@ -102,6 +108,7 @@ int main()
     // Similarly, uniform initialization also works on C++’s std::map and
     // unordered_map:
     auto myDict = std::unordered_map < int, const char* > { { 5, "foo" }, {6, "bar"} };
+    std::cout << "-------------- myDict[5]: " << std::endl;
     std::cout << myDict[5] << std::endl;
 
     // Lambda Expressions
@@ -110,6 +117,10 @@ int main()
     //
     // Lambda expressions were added in C++11:
     std::sort(myList.begin(), myList.end(), [] (int x, int y) { return std::abs(x) < std::abs(y); });
+    std::cout << "-------------- lambda sort: " << std::endl;
+    for (const auto& listItem : myList) {
+        std::cout << " " << listItem << std::endl;
+    }
 
     // In 2001, Python added statically nested scopes, which allow lambda
     // functions to capture variables defined in enclosing functions:
@@ -123,7 +134,26 @@ int main()
     auto adder = [] (int x) -> std::function < int(int) > {
         return [=] (int y) { return x + y; };
     };
+    std::cout << "-------------- adder: " << std::endl;
     std::cout << adder(5)(6) << std::endl;
+
+    // Standard Algorithms
+    // Python’s built-in filter function lets you selectively copy elements
+    // from a list (though list comprehensions are preferred):
+    //  result = filter(lambda x: x >= 0, myList)
+    //
+    // C++11 introduces std::copy_if, which lets us use a similar,
+    // almost-functional style:
+    auto result = std::vector < int > {-6, 3, 123, 987, -555};
+    std::copy_if(myList.cbegin(), myList.cend(), std::back_inserter(result), [] (int x) { return x >= 0; });
+    std::cout << "-------------- copy_if: " << std::endl;
+    for (const auto& listItem : myList) {
+        std::cout << " " << listItem << std::endl;
+    }
+
+    // Other C++ algorithms that mimic Python built-ins include transform,
+    // any_of, all_of, min and max. The upcoming ranges proposal has the
+    // potential to simplify such expressions further.
 
     // dlftodo: remainder of http://preshing.com/20141202/cpp-has-become-more-pythonic/
 
