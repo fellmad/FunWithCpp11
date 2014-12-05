@@ -3,6 +3,9 @@
 #include <vector>
 #include <iostream>
 #include <tuple>
+#include <unordered_map>
+#include <algorithm>
+#include <functional>
 
 int main()
 {
@@ -27,11 +30,10 @@ int main()
         std::cout << x << std::endl;
     }
 
-    // You can iterate over a std::vector or any class which implements the 
+    // You can iterate over a std::vector or any class which implements the
     // begin and end member functions – not unlike Python’s iterator protocol.
     // With range - based for loops, I often find myself wishing C++ had
     // Python’s xrange function built - in.
-
 
     // Auto
     // Python has always been a dynamically typed language. You don’t need to
@@ -61,6 +63,15 @@ int main()
     //
     // C++ added tuples to the standard library in C++11. The proposal even
     // mentions Python as an inspiration:
+
+    /*
+        auto adder(int amount) {
+        return [=](int x){ return x + amount; };
+        }
+        ...
+        std::cout << adder(5)(5);
+        */
+
     auto triple = std::make_tuple(5, 6, 7);
     std::cout << std::get<0>(triple) << std::endl;
 
@@ -71,7 +82,50 @@ int main()
     short i, j, k;
     std::tie(i, j, k) = triple;
     std::cout << "i, j, k: " << i << ", " << j << ", " << k << std::endl;
-    
+
+    // Uniform Initialization
+    // In Python, lists are a built-in type. As such, you can create a Python
+    // list using a single expression:
+    //  myList = [6, 3, 7, 8]
+    //  myList.append(5);
+    //
+    // C++’s std::vector is the closest analog to a Python list. Uniform
+    // initialization, new in C++11, now lets us create them using a single
+    // expression as well:
+    auto myList = std::vector < int > { 6, 3, 7, 8 };
+    myList.push_back(5);
+
+    // In Python, you can also create a dictionary with a single expression:
+    //  myDict = {5: "foo", 6: "bar"}
+    //  print(myDict[5])
+    //
+    // Similarly, uniform initialization also works on C++’s std::map and
+    // unordered_map:
+    auto myDict = std::unordered_map < int, const char* > { { 5, "foo" }, {6, "bar"} };
+    std::cout << myDict[5] << std::endl;
+
+    // Lambda Expressions
+    // Python has supported lambda functions since 1994:
+    //  myList.sort(key = lambda x: abs(x))
+    //
+    // Lambda expressions were added in C++11:
+    std::sort(myList.begin(), myList.end(), [] (int x, int y) { return std::abs(x) < std::abs(y); });
+
+    // In 2001, Python added statically nested scopes, which allow lambda
+    // functions to capture variables defined in enclosing functions:
+    //  def adder(amount):
+    //  return lambda x: x + amount
+    //  ...
+    //  print(adder(5)(5))
+    //
+    // Likewise, C++ lambda expressions support a flexible set of capture rules,
+    //  allowing you to do similar things:
+    auto adder = [] (int x) -> std::function < int(int) > {
+        return [=] (int y) { return x + y; };
+    };
+    std::cout << adder(5)(6) << std::endl;
+
     // dlftodo: remainder of http://preshing.com/20141202/cpp-has-become-more-pythonic/
+
     return 0;
 }
