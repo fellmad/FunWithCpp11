@@ -1,5 +1,7 @@
 // http://preshing.com/20141202/cpp-has-become-more-pythonic/
 
+// also: http://ericniebler.com/2014/12/07/a-slice-of-python-in-c/
+
 #include <vector>
 #include <iostream>
 #include <tuple>
