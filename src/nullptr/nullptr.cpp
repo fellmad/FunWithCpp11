@@ -2,6 +2,8 @@
 
 #include <cstddef>	// #define's NULL
 #include <iostream>
+#include <string>
+#include <memory>
 
 void f(void*)
 {
@@ -37,14 +39,37 @@ int main()
     // f(NULL);
 
     class Robot {
-        std::string name;
-        int hight_in_micrometers;
+    public:
+
+        Robot(const std::string& name, const int& height_in_micrometers) :
+            _name(name), _height_in_micrometers(height_in_micrometers)
+        {}
+
+        void Speak()
+        {
+            std::cout << "my name is " << _name << std::endl;
+        }
+
+        ~Robot()
+        {
+            std::cout << "deleting " << _name << std::endl;
+        }
+
+    private:
+        std::string _name;
+        int _height_in_micrometers;
     };
 
-    auto robot1 = new Robot();
-    delete robot1;
-    robot1 = nullptr;
-    delete robot1;
-    delete robot1;
-    delete robot1;
+    auto robot1 = new Robot("robby one", 1002);  // OLD. Don't DO THIS anymore. see below.
+    robot1->Speak();
+    robot1 = nullptr;   // legal, but stupid: should have paired with delete
+    delete robot1;      // delete of nullptr is always safe
+    // but now we have a leak. UGH.
+
+    {
+        std::unique_ptr <Robot> robot2 {new Robot {"robbie 2", 1234}};
+        robot2->Speak();
+        robot2 = nullptr;
+        // no NEED to DELETE robot2!
+    }
 }
