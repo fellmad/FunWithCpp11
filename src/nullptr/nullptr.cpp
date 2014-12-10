@@ -1,32 +1,38 @@
-// Meyers, Scott(2014 - 11 - 11).Effective Modern C++: 42 Specific Ways to 
-// Improve Your Use of C++11 and C++14 (Kindle Locations 1778 - 1782).
-// O'Reilly Media. Kindle Edition. 
+// http://en.cppreference.com/w/cpp/types/nullptr_t
 
-#include <Windows.h>    // #define NULL 0
+#include <cstddef>	// #define's NULL
 #include <iostream>
-
-void f(int)
-{
-    std::cout << "int parm" << std::endl;
-}
-
-void f(bool)
-{
-    std::cout << "bool parm" << std::endl;
-}
 
 void f(void*)
 {
-    std::cout << "void pointer parm" << std::endl;
+    std::cout << "Pointer to void overload\n";
 }
 
+void f(int* pi)
+{
+   std::cout << "Pointer to integer overload\n";
+}
+ 
+void f(double* pd)
+{
+   std::cout << "Pointer to double overload\n";
+}
+ 
+void f(std::nullptr_t nullp)
+{
+   std::cout << "null pointer overload\n";
+}
+ 
 int main()
 {
-    f(NULL);
+    int* intPointer(nullptr);
+    double* doublePointer{nullptr};
+ 
+    f(intPointer);
+    f(doublePointer);
+    f(nullptr);  // would be ambiguous without void f(nullptr_t)
     f("");
-    f(nullptr);
 
-    // fun: 
-    std::cout << typeid(nullptr).name() << std::endl;
-    return 0;
+    // fun: uncomment the next line...
+    f(NULL);
 }
