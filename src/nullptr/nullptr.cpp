@@ -34,5 +34,17 @@ int main()
     f("");
 
     // fun: uncomment the next line...
-    f(NULL);
+    // f(NULL);
+
+    class Robot {
+        std::string name;
+        int hight_in_micrometers;
+    };
+
+    auto robot1 = new Robot();
+    delete robot1;
+    robot1 = nullptr;
+    delete robot1;
+    delete robot1;
+    delete robot1;
 }
