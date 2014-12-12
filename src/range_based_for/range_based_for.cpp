@@ -13,7 +13,7 @@ std::ostream& operator<< (std::ostream& os, const std::vector<T>& vec)
 
 int main()
 {
-    std::vector <std::string> words = {
+    std::vector <std::string> words {
         "hello",
         "from",
         __FILE__,
