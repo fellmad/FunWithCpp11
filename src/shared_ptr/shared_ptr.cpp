@@ -29,11 +29,12 @@ public:
 
 int main()
 {
-    std::vector<std::shared_ptr<IF>> list = {
+    std::vector<std::shared_ptr<IF>> list {
         std::make_shared<A>(),
         std::make_shared<B>(),
         std::make_shared<A>(),
-        std::make_shared<A>()};
+        std::make_shared<A>()
+    };
 
     for (auto l : list)
         std::cout << l->str() << std::endl;
