@@ -11,9 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8CA91FAE-FDD8-4ADC-A9AA-93CB69811D5B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>smarts</RootNamespace>
+    <RootNamespace>make_unique</RootNamespace>
+    <ProjectGuid>{8CA91FAE-FDD8-4ADC-A9AA-93CB69811D5B}</ProjectGuid>
+    <ProjectName>make_unique_02</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,7 +79,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="smarts.cpp" />
+    <ClCompile Include="make_unique.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

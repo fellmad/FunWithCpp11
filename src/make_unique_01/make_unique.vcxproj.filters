@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="smarts.cpp">
+    <ClCompile Include="make_unique.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
