@@ -19,7 +19,7 @@ void print(const std::vector<int> &vec)
 int main()
 {
     // initialises a vector that holds the numbers from 0-9.
-    std::vector<int> v = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    std::vector<int> v { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
     print(v);
 
     // removes all elements with the value 5
