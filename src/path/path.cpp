@@ -1,5 +1,4 @@
 ////////////////////////////////////////////////////////////////////////////////
-// 'borrowed' from Boost. This is bleeding-edge, but seems *very good*:
 // http://en.cppreference.com/w/cpp/experimental/fs
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -10,7 +9,7 @@ namespace fs = std::tr2::sys;
 
 int main()
 {
-    fs::path currentFolder {"."};
+    const fs::path currentFolder {"."};
 
     fs::directory_iterator directoryIterator(currentFolder);
     fs::directory_iterator end;
