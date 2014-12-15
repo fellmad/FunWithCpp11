@@ -30,6 +30,4 @@ int main()
     for (; directoryIterator != end; ++directoryIterator) {
         std::cout << directoryIterator->path() << std::endl;
     }
-
-    return 0;
 }
