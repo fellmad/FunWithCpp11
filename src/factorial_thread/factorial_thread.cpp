@@ -40,6 +40,4 @@ int main()
 
     hello_thread.join();
     std::cout << "back on the main thread - " << thisThreadID << std::endl;
-
-    return 0;
 }

@@ -31,6 +31,4 @@ int main()
     // removes all odd numbers
     v.erase( std::remove_if(std::begin(v), std::end(v), is_odd), std::end(v) );
     print(v);
-
-    return 0;
 }

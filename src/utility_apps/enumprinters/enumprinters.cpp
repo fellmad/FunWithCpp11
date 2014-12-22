@@ -76,6 +76,4 @@ int main()
         std::cout << std::endl;
         std::wcout << "found " << msXpsDocWriterName << std::endl;
     }
-
-    return 0;
 }

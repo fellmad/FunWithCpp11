@@ -22,6 +22,4 @@ int main()
 
     // q: why is doubleFuntion's TYPE double?
     // a: hint: cast the return expression as an int...hover...
-
-    return 0;
 }

@@ -48,6 +48,4 @@ int main()
 
     std::cout << "f3(PI, 2): " << f3(PI, 2) << std::endl;
     std::cout << "f3(2, PI): " << f3(2, PI) << std::endl;
-
-    return 0;
 }

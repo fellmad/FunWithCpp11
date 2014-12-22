@@ -52,6 +52,4 @@ int main()
     else {
         std::cout << "no leaks dude" << std::endl;
     }
-
-    return 0;
 }

@@ -79,5 +79,4 @@ int main()
     std::cerr << "try a DEBUG BUILD in vstudio." << std::endl;
 #endif
 
-    return 0;
     }

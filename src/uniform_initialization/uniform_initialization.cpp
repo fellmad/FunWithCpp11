@@ -44,6 +44,4 @@ int main()
     short y0 = -123;
     short y1 = {-123};
     short y2 {-123};
-
-    return 0;
 }

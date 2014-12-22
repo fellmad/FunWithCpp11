@@ -43,6 +43,4 @@ int main()
 
     auto s3(ULongToCComBSTR2(789));
     std::wcout << s3.m_str << std::endl;
-
-    return 0;
 }

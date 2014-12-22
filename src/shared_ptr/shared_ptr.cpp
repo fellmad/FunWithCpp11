@@ -38,6 +38,4 @@ int main()
 
     for (auto l : list)
         std::cout << l->str() << std::endl;
-
-    return 0;
 }

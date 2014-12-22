@@ -33,6 +33,4 @@ int main()
     t1.join();
 
     std::cout << "back on the main thread - " << thisThreadID << std::endl;
-
-    return 0;
 }

@@ -180,6 +180,4 @@ int main()
     // but it seems a lot of them do. Python is recognized as a friendly,
     // approachable programming language. Perhaps some of its charisma has
     // rubbed off?
-
-    return 0;
 }

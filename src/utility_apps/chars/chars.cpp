@@ -16,5 +16,4 @@ int main()
     for (unsigned short val = 0; val <= 255; val++) {
         output_a_line(val);
     }
-    return 0;
 }

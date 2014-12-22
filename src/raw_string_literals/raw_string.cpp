@@ -38,6 +38,4 @@ int main()
     mangled by your syntax-sensitive text editor.
     there is an XML file in this folder...
     */
-
-    return 0;
 }

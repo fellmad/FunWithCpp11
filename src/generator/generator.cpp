@@ -57,5 +57,4 @@ int main()
     for (const auto& number : range(10)) {
         std::cout << number << std::endl;
     }
-    return 0;
 }

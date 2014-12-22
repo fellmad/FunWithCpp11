@@ -252,6 +252,4 @@ int main()
     dumpsize(WORD_BLOB);
     dumpsize(WPARAM);
     dumpsize(std::wstring);
-
-    return 0;
 }
