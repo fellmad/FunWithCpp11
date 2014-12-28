@@ -4,7 +4,7 @@
 #include <iostream>
 
 // from: C++ standard: 5.1.2 Lambda expressions
-void abssort(float* x, unsigned N)
+void abssort(float* x, const unsigned N)
 {
     std::sort(
         x,
@@ -23,7 +23,7 @@ int main()
          -4321.45f
     };
 
-    abssort(naked_floats, sizeof naked_floats / sizeof(float));
+    abssort(naked_floats, _countof(naked_floats));
 
     std::cout << "absolute-value sorted floats:" << std::endl;
     for (const auto& floater : naked_floats) {
