@@ -1,3 +1,5 @@
+// typeid operator: http://en.cppreference.com/w/cpp/language/typeid
+
 #include <string>
 #include <iostream>
 
