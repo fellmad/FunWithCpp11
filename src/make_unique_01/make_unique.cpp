@@ -6,8 +6,8 @@ class Big {
 
 public:
 
-    Big(const std::string& name) : name(name) {}
-
+    Big(const std::string& name) : name(name)
+    {}
     void Greet()
     {
         std::cout << "hi from " << name << std::endl;
