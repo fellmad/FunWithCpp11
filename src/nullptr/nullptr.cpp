@@ -5,28 +5,23 @@
 #include <string>
 #include <memory>
 
-void f(void*)
-{
+void f(void*) {
     std::cout << "Pointer to void overload\n";
 }
 
-void f(int* pi)
-{
+void f(int*) {
    std::cout << "Pointer to integer overload\n";
 }
  
-void f(double* pd)
-{
+void f(double*) {
    std::cout << "Pointer to double overload\n";
 }
  
-void f(std::nullptr_t nullp)
-{
+void f(std::nullptr_t) {
    std::cout << "null pointer overload\n";
 }
  
-int main()
-{
+int main() {
     int* intPointer(nullptr);
     double* doublePointer{nullptr};
  
@@ -72,4 +67,7 @@ int main()
         robot2 = nullptr;
         // no NEED to DELETE robot2!
     }
+
+    std::cout << typeid(nullptr).name() << std::endl;
+    std::cout << "sizeof nullptr: " << sizeof nullptr << std::endl << std::endl;
 }
