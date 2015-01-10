@@ -12,7 +12,7 @@ class Printer {
 
 public:
     void Dump() {
-        std::cout << _name << " " << _jobCount << std::endl;
+        std::cout << _name << " job count: " << _jobCount << std::endl;
     }
 };
 
