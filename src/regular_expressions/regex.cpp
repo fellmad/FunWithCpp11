@@ -5,7 +5,7 @@ int main()
 {
     // std::regex pathSplitRegex("\\s*[;]+\\s*");   // old: ugly escapes: \\
 
-    std::regex pathSplitRegex(R"(\s*[;]+\s*)");     // c++11 raw literal
+    std::regex pathSplitRegex(R"(\s*[;]+\s*)");     // c++11 raw literal (FUN!)
 
     std::string path = R"(c:\temp;d:\temp;c:\temp\123 abc;f:/a/b/c/d/j.txt;x:\y/z\w)";
 
