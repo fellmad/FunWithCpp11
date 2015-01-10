@@ -1,10 +1,9 @@
 #include <iostream> 
-#include <tuple> 
+#include <tuple>
 
-using Mytuple = std::tuple < int, double, int, double > ; // no ugly #define. yay!
+using Mytuple = std::tuple < int, double, int, double > ; // FUN: no ugly #define!
 
-Mytuple multTuple(Mytuple const incoming, const short multiplier)
-{
+Mytuple multTuple(Mytuple const incoming, const short multiplier) {
     const Mytuple outgoing {
         std::get<0>(incoming) * multiplier,
         std::get<1>(incoming) * multiplier,
@@ -16,7 +15,7 @@ Mytuple multTuple(Mytuple const incoming, const short multiplier)
 
 int main()
 {
-    Mytuple tuple1 {0, 1.1, 2, 3.3};
+    const Mytuple tuple1 {0, 1.1, 2, 3.3};
 
     // unpack the tuple into individual variables via get():
     auto val0 = std::get<0>(tuple1);
@@ -29,12 +28,11 @@ int main()
     std::cout << " " << val2;
     std::cout << " " << val3 << std::endl;
 
-    int     val4;
-    double  val5;
-    int     val6;
-    double  val7;
-
-    Mytuple tuple2 {4, 5.5, 6, 7.7};
+    const Mytuple tuple2 {4, 5.5, 6, 7.7};
+    int     val4 {};
+    double  val5 {};
+    int     val6 {};
+    double  val7 {};
 
     // unpack the tuple into individual variables via get():
     std::tie(val4, val5, val6, val7) = tuple2;
