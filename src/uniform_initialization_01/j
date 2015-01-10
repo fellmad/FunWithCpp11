@@ -1,0 +1,33 @@
+diff --git a/src/uniform_initialization_01/uniform_initialization.cpp b/src/uniform_initialization_01/uniform_initialization.cpp
+index 99cafba..aec6039 100644
+--- a/src/uniform_initialization_01/uniform_initialization.cpp
++++ b/src/uniform_initialization_01/uniform_initialization.cpp
+@@ -29,16 +29,18 @@ int main()
+             std::dec << std::setw(4) << the_byte << std::endl;
+     }
+ 
+-    // we had this in our sdk samples:
+-    std::vector <byte> sendBytes;
+-    sendBytes.push_back(0x00);
+-    sendBytes.push_back(0xC0);
+-    sendBytes.push_back(0x00);
+-    sendBytes.push_back(0x00);
+-    sendBytes.push_back(0x12);
+-
+-    // better; just like the C# sample:
+-    std::vector <byte> sendBytes2 {0x00,0xC0,0x00,0x00,0x12};
++    {
++        // we had this in our sdk samples:
++        std::vector <byte> sendBytes;
++        sendBytes.push_back(0x00);
++        sendBytes.push_back(0xC0);
++        sendBytes.push_back(0x00);
++        sendBytes.push_back(0x00);
++        sendBytes.push_back(0x12);
++
++        // better; just like the C# sample:
++        std::vector <byte> sendBytes2 {0x00, 0xC0, 0x00, 0x00, 0x12};
++    }
+ 
+     // any difference here? view .ASM:
+     short y0 = -123;
