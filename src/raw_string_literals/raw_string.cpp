@@ -1,13 +1,11 @@
 #include <string>
 #include <iostream>
 
-void echo(std::string s)
-{
+void echo(std::string s) {
     std::cout << "result: " << s << std::endl;
 }
 
-int main()
-{
+int main() {
     // insert a raw string literal following this pattern:
     // R"delimiter(whatever chars you want here...)delimiter"
     // http://en.cppreference.com/w/cpp/language/string_literal
@@ -22,10 +20,10 @@ int main()
     s = R"("dinosaur" developers use "\n" instead of std::endl.)";
     echo(s);
 
-    s = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+    s = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"; // error-prone...
     echo(s);
 
-    s = R"(<?xml version="1.0" encoding="UTF-8"?>)";	// much, much nicer.
+    s = R"(<?xml version="1.0" encoding="UTF-8"?>)"; // much, much nicer.
     echo(s);
 
     std::wcout << LR"(raw \t unicode string)" << std::endl;
@@ -35,7 +33,8 @@ int main()
 
     /*
     use this commented section to help insert a literal string that might get
-    mangled by your syntax-sensitive text editor.
-    there is an XML file in this folder...
+    mangled by your syntax-sensitive text editor. there is an XML file in this folder...
+
+    echo(s);
     */
 }
