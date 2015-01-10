@@ -5,10 +5,9 @@
 #include <filesystem>
 #include <iostream>
 
-namespace fs = std::tr2::sys;
+namespace fs = std::tr2::sys;   // 2014: approved by ISO
 
-int main()
-{
+int main() {
     const fs::path currentFolder {"."};
 
     fs::directory_iterator directoryIterator(currentFolder);
@@ -31,3 +30,5 @@ int main()
         std::cout << directoryIterator->path() << std::endl;
     }
 }
+
+// use fs::wpath, fs::wdirectory_iterator, ... for unicode
