@@ -33,22 +33,17 @@ int main() {
     // fun: uncomment the next line...
     // f(NULL);
 
-    class Robot {
+    class Robot
+    {
     public:
 
         Robot(const std::string& name, const int& height_in_micrometers) :
             _name(name), _height_in_micrometers(height_in_micrometers)
         {}
 
-        void Speak()
-        {
-            std::cout << "my name is " << _name << std::endl;
-        }
+        void Speak() {std::cout << "my name is " << _name << std::endl;}
 
-        ~Robot()
-        {
-            std::cout << "deleting " << _name << std::endl;
-        }
+        ~Robot() {std::cout << "deleting " << _name << std::endl;}
 
     private:
         std::string _name;
@@ -62,7 +57,7 @@ int main() {
     // but now we have a leak. UGH.
 
     {
-        std::unique_ptr <Robot> robot2 {new Robot {"robbie 2", 1234}};
+        std::unique_ptr <Robot> robot2 {new Robot {"robby 2", 1234}};
         robot2->Speak();
         robot2 = nullptr;
         // no NEED to DELETE robot2!
