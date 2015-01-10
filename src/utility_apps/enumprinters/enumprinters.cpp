@@ -2,7 +2,7 @@
 #include <tchar.h>
 #include <winspool.h>
 #include <string>
-#include <assert.h> // not C++ standard
+#include <cassert>
 #include <vector>
 #include <iostream>
 #include <algorithm>
@@ -31,9 +31,7 @@ std::vector <std::wstring> GetPrinterNames()
         &returnedByteCount);
 
     assert(FALSE == rc);
-
-    DWORD lastError = ::GetLastError();
-    assert(ERROR_INSUFFICIENT_BUFFER == lastError);
+    assert(ERROR_INSUFFICIENT_BUFFER == ::GetLastError());
 
     // 2) get the list of printernames.
     const DWORD printerInfo2BufferSize(neededByteCount);

@@ -18,8 +18,5 @@
     <ClCompile Include="enumprinters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="oldcode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
