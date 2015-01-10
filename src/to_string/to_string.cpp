@@ -2,9 +2,8 @@
 #include <string>
 #include <atlstr.h>
 
-// from some actual production C++ code:
-CComBSTR ULONG2String(ULONG value)
-{
+// from some production code:
+CComBSTR ULONG2String(ULONG value) {
     CComBSTR bstrStr;
     CString s;
     s.Format(TEXT("%d"), value);
@@ -13,9 +12,8 @@ CComBSTR ULONG2String(ULONG value)
     return bstrStr;
 }
 
-// using std::to_string:
-CComBSTR ULongToCComBSTR(const ULONG& value)
-{
+// using std::to_string. FUN!
+CComBSTR ULongToCComBSTR(const ULONG& value) {
     const auto stringVal(std::to_string(value));
     const CComBSTR ccomBstrVal {stringVal.c_str()};
     return ccomBstrVal;
@@ -28,13 +26,8 @@ auto ULongToCComBSTR2(const ULONG& value) -> CComBSTR
     return returnString;
 }
 
-// 1) can we make a generic function - returning CString, CStringA, W, 
-//    CComBSTR, std::string, std::wstring?
-//
-// 2) why can we return a the reference from line 27?
+int main() {
 
-int main()
-{
     auto s1 = ULONG2String(123);
     std::wcout << s1.m_str << std::endl;
 
@@ -44,3 +37,7 @@ int main()
     auto s3(ULongToCComBSTR2(789));
     std::wcout << s3.m_str << std::endl;
 }
+
+// 1) can we make a generic function - returning CString, CStringA /  W, 
+//    CComBSTR, std::string, std::wstring?
+// 2) ULongToCComBSTR2() returns a reference
