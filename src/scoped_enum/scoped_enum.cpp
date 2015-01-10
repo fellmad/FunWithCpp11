@@ -2,7 +2,8 @@
 
 #include <iostream>
 
-// color may be red (value 0), yellow (value 1), green (value 20), or blue (value 21)
+// legacy C/C++ enum ("unscoped enum")
+// color may be red (0), yellow (1), green (20), or blue (21)
 enum color {
     red,
     yellow,
@@ -10,10 +11,11 @@ enum color {
     blue
 };
 
+// C++ scoped enum
 // altitude may be altitude::high or altitude::low
 enum class altitude : char {
     high = 'h',
-    low = 'l', // C++11 allows the extra comma
+    low  = 'l', // C++11 now officially allows the extra comma
 };
 
 // the constant d is 0, the constant e is 1, the constant f is 3
@@ -31,19 +33,21 @@ std::ostream &operator << (std::ostream &os, color c) {
     return os;
 }
 
+// provide the C++ extraction operator for type altitude
 std::ostream &operator << (std::ostream &os, altitude al) {
-    return os << static_cast<char>(al);
+    return os << static_cast <char> (al);
 }
 
 int main() {
+
     color col = red;
-    altitude a {altitude::low};
-    const auto high_altitude = altitude::high;
+    const altitude a {altitude::low};
+    const auto& high_altitude = altitude::high;
 
     std::cout
-        << "col = " << col << std::endl
-        << "a = " << a << std::endl
-        << "f = " << f << std::endl
+        << "col           = " << col << std::endl
+        << "a             = " << a << std::endl
+        << "f             = " << f << std::endl
         << "high_altitude = " << high_altitude << std::endl
         ;
 }
