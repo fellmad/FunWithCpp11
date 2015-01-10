@@ -1,11 +1,9 @@
 #include <windows.h>
-#include <tchar.h>
 #include <winspool.h>
 #include <string>
-#include <cassert>
+#include <cassert> // http://en.cppreference.com/w/cpp/error/assert
 #include <vector>
 #include <iostream>
-#include <algorithm>
 
 #pragma comment(lib, "winspool.lib")  // MS pragmas: http://msdn.microsoft.com/en-us/library/d9x1s805.aspx
 
