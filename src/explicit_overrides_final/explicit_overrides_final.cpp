@@ -6,13 +6,13 @@ struct Derived : Base {
     virtual void some_func(int);
 };
 
-// line 6: OUCH. compiler lets you override function with different signature?
+// line 6: OUCH. compiler lets you override function with different signature.
 
 struct A {
     virtual void some_func(float);
 };
 
-struct B  : A {
+struct B : A {
     virtual void some_func(int) override; // ill-formed - doesn't override a base class method
 };
 
@@ -28,5 +28,4 @@ class E final : public D {
     void foo();
 };
 
-class F : public E {
-};
+class F : public E {};
