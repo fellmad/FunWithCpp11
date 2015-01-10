@@ -1,6 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
-// sizeof different data types
+// display sizeof different C/C++ data types
+// build both 32 and 64 bit flavors
 ///////////////////////////////////////////////////////////////////////////////
+#include <SDKDDKVer.h>
 #include <afx.h>
 #include <iomanip>
 #include <wtypes.h>
@@ -224,6 +226,7 @@ int main()
     dumpsize(VT_LPSTR);
     dumpsize(VT_LPWSTR);
     dumpsize(VT_NULL);
+    dumpsize(nullptr);
     dumpsize(VT_PTR);
     dumpsize(VT_R4);
     dumpsize(VT_R8);
