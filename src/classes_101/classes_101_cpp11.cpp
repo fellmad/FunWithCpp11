@@ -37,4 +37,4 @@ int main()
 //
 // C++11: C++ compiler creates
 //  move constructor
-//  move assignmet operator
+//  move assignment operator

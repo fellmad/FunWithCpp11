@@ -32,3 +32,4 @@ int main() {
 }
 
 // use fs::wpath, fs::wdirectory_iterator, ... for unicode
+// line 32: 'append operator' defined for path class.
