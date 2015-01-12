@@ -20,7 +20,7 @@ struct C {
 
 int main() {
     std::cout << std::boolalpha;
-    std::cout << std::is_pod<A>::value << '\n';
-    std::cout << std::is_pod<B>::value << '\n';
-    std::cout << std::is_pod<C>::value << '\n';
+    std::cout << std::is_pod<A>::value << std::endl;
+    std::cout << std::is_pod<B>::value << std::endl;
+    std::cout << std::is_pod<C>::value << std::endl;
 }
