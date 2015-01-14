@@ -9,7 +9,7 @@ public:
 
     // C++11:
     B(B && b);                          // move constructor
-    B & operator = (B && b);            // move assignment operator
+    B& operator = (B && b);             // move assignment operator
 };
 
 int main()

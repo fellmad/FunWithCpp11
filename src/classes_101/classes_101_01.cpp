@@ -11,10 +11,11 @@ public:
 int main()
 {
     {
-        A a1;
-        A a2(a1);
-        A a3 = a2;
-        a2 = a3;
+        A a1;       // default ctor
+        A a2(a1);   // copy ctor
+        A a3 = a2;  // assignment operator
+        a2 = a3;    // ditto
+                    // destructor - as it goes out of scope.
     }
 
     {
@@ -31,4 +32,6 @@ int main()
 //	default assignment operator;
 //	default copy constructor
 //
-// this is plain vanilla C++; nothing new here.
+// class A: this is plain vanilla C++; nothing new here.
+// class B: we get the 'default' keywords...and we get 'delete'
+//          keywords too.
