@@ -5,13 +5,14 @@
 #include <filesystem>
 #include <iostream>
 
-namespace fs = std::tr2::sys;   // 2014: approved by ISO
+namespace fs = std::tr2::sys;   // 2014: <filesystem> approved by ISO c++ committee
 
 int main() {
+
     const fs::path currentFolder {"."};
 
     fs::directory_iterator directoryIterator(currentFolder);
-    fs::directory_iterator end;
+    const fs::directory_iterator end;
 
     std::cout << "current folder: " << std::endl;
     for (; directoryIterator != end; ++directoryIterator) {
@@ -23,7 +24,7 @@ int main() {
     threeDir /= "drivers/x64";
     threeDir /= "3";
 
-    directoryIterator = threeDir;   // very nice
+    directoryIterator = threeDir;
 
     std::cout << "3dir: " << std::endl;
     for (; directoryIterator != end; ++directoryIterator) {
@@ -32,4 +33,5 @@ int main() {
 }
 
 // use fs::wpath, fs::wdirectory_iterator, ... for unicode
-// line 32: 'append operator' defined for path class.
+// line 23: 'append operator' defined for path class.
+// line 27: nice: assignment operator for path object to iterator object
