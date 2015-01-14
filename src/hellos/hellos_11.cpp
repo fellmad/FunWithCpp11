@@ -1,14 +1,16 @@
 #include <iostream>
+#include <string>
 
-auto main() -> int
-{
-    std::wcout << L"hello from C++ 11 dude." << std::endl;
+auto getHello() -> const std::string {
+    const auto& unused_stuff {-4.567e45};
+    return "hello from C++ 11 dude.";
 }
 
-// line 3: "Trailing Return Type":
+int main() {
+    std::cout << getHello() << std::endl;
+}
+
+// line 4, 9: "Trailing Return Type":
 // http://en.cppreference.com/w/cpp/language/function
 
-// line 3: yes; it's FUN and COOL - but NOT allowed in main() in C++14 (!)
-// http://en.cppreference.com/w/cpp/language/main_function
-
-// another tidbit: main() is special; you do not NEED to return anything.
+// another tidbit: main() is special; you do not NEED to return anything; zero by default
