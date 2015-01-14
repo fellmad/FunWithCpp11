@@ -10,7 +10,11 @@ int main() {
     std::cout << getHello() << std::endl;
 }
 
-// line 4, 9: "Trailing Return Type":
+// line 4: "Trailing Return Type":
 // http://en.cppreference.com/w/cpp/language/function
 
-// another tidbit: main() is special; you do not NEED to return anything; zero by default
+// line 5: auto! Yay! FUN!
+// line 5: uniform initialization; initializer lists
+
+// main() is special; you do not NEED to return anything; zero by default
+// FUN!
