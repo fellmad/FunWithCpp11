@@ -4,13 +4,12 @@
 
 // compile with /EHsc, and /Fa to see .ASM output.
 
-int main()
-{
+int main() {
     char c1 = 1.234e12;  // warning: C4244: 'initializing' : conversion from 'double' to 'char', possible loss of data
     c1 = 54321;  // warning C4305 : '=' : truncation from 'int' to 'char'
 
     //char c2 {3.456};    // error C2397: conversion from 'double' to 'char' requires a narrowing conversion
-    //char c3 = {3.456};  // ditto
+    // char c3 = {3.456};  // ditto
 
     char capitalLetter_A {65};  // ok; in range
     double d1 {3};              // ok; in range - convert int to double;
@@ -30,7 +29,7 @@ int main()
     }
 
     {
-        // we had this in our sdk samples:
+        // we had this in some end-user sample code:
         std::vector <byte> sendBytes;
         sendBytes.push_back(0x00);
         sendBytes.push_back(0xC0);
