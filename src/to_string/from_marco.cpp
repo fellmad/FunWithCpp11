@@ -17,8 +17,7 @@ CComBSTR ULONG2String(ULONG value)
 CComBSTR ULongToCComBSTR(const ULONG &value)
 {
     const auto &stringVal(std::to_string(value));
-    const CComBSTR ccomBstrVal
-    {
+    const CComBSTR ccomBstrVal {
         stringVal.c_str()
     };
     return ccomBstrVal;
@@ -30,19 +29,21 @@ auto ULongToCComBSTR2(const ULONG &value) -> CComBSTR
     const auto &returnString = CComBSTR(std::to_wstring(value).c_str());
     return returnString;
 }
+// comment: passing a ULONG as const & IMHO doesn't buy you anything...
+// ULONG is not shorter than a pointer ... it's faster for Objects, which need
+// copy, but not for simple data types, but it needs to be dereferenced ...
 
-// even more modern (at least more effective)
-CComBSTR ULongToCComBSTR3(ULONG value) // comment: passing a ULONG as const & IMHO doesn't buy you anything... ULONG is not shorter than a pointer ... it's faster for Obejcts, which need copy, but not for simple data types, but it needs to be dereferrenced ...
+CComBSTR ULongToCComBSTR3(ULONG value)
 {
-    return  CComBSTR { std::to_wstring(value).c_str() };
+    return  CComBSTR {std::to_wstring(value).c_str()};
 
-    // BTW, according to the standard the below should work. Unfortunately, MS gives a compiler error... might have to do with the nature of CComBSTR...
+    // BTW, according to the standard the below should work. Unfortunately,
+    // MS gives a compiler error... might have to do with the nature of CComBSTR...
     //  return{ std::to_wstring(value).c_str() };
 }
 
 int main()
 {
-
     auto s1 = ULONG2String(123);
     std::wcout << s1.m_str << std::endl;
 
@@ -52,7 +53,7 @@ int main()
     auto s3(ULongToCComBSTR2(789)); // you still call the copy constructor to create s3 from the stack !
     std::wcout << s3.m_str << std::endl;
 
-    CComBSTR s4 { ULongToCComBSTR3(987) };  // do note the curly brackets --- don't call the copy constructor, just "move" the CComBSTR constructed in ULongToCComBSTR3 to s4 !
+    CComBSTR s4 {ULongToCComBSTR3(987)};  // do note the curly brackets --- don't call the copy constructor, just "move" the CComBSTR constructed in ULongToCComBSTR3 to s4 !
     std::wcout << s4.m_str << std::endl;
 
     // more FUN: strings to numbers!
