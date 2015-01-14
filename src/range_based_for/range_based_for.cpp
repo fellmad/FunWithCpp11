@@ -3,16 +3,14 @@
 #include <vector>
 
 template <typename T>
-std::ostream& operator << (std::ostream& os, const std::vector<T>& vec)
-{
+std::ostream& operator << (std::ostream& os, const std::vector<T>& vec) {
     for (const auto& el : vec) {
         os << el << std::endl;
     }
     return os;
 }
 
-int main()
-{
+int main() {
     std::vector <std::string> words {
         "hello",
         "from",
@@ -29,5 +27,7 @@ int main()
     std::cout << numbers << std::endl;
 }
 
-// line 5: generic extraction operator
-// line 8: prevent copy constructor by using a reference
+// line 5: generic (templated) extraction operator
+// line 6: could we have used a trailing return type?
+// line 7: range-based for loop
+//         prevent copy constructor by using a reference
