@@ -104,6 +104,8 @@ int main()
     dumpsize(OBJECTID);
     dumpsize(ODBCINT64);
     dumpsize(OLECHAR);
+    dumpsize(OSVERSIONINFO);
+    dumpsize(OSVERSIONINFOEX);
     dumpsize(PALETTEENTRY);
     dumpsize(PBYTE);
     dumpsize(PBOOL);
