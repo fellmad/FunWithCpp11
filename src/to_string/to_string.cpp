@@ -27,7 +27,6 @@ auto ULongToCComBSTR2(const ULONG& value) -> CComBSTR
 }
 
 int main() {
-
     auto s1 = ULONG2String(123);
     std::wcout << s1.m_str << std::endl;
 
@@ -39,7 +38,7 @@ int main() {
 
     // more FUN: strings to numbers!
     const auto& num1 = std::stoi(" -123   ");
-    const auto& num2 = std::stod("    456.78e-43 ");
+    const auto& num2 = std::stod(L"    456.78e-43 "); // unicode same as non-unicode
     std::cout << "num1, num2: " << num1 << ", " << num2 << std::endl;
 }
 
