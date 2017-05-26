@@ -28,7 +28,7 @@ int main()
 
     // Meanwhile, for nearly three decades, C++ supported only C-style for loops.
     // Finally, in C++11, range-based for loops were added:
-    std::vector <int> ints {-3, 39, 12345, -45678};
+    std::vector <int> ints{ -3, 39, 12345, -45678 };
     std::cout << "----- range-based for loop: " << std::endl;
     for (const auto& x : ints) {
         std::cout << x << std::endl;
@@ -90,7 +90,7 @@ int main()
     // C++’s std::vector is the closest analog to a Python list. Uniform
     // initialization, new in C++11, now lets us create them using a single
     // expression as well:
-    auto myList = std::vector < int > { 6, 3, 7, 8 };
+    auto myList = std::vector < int >{ 6, 3, 7, 8 };
     myList.push_back(5);
     std::cout << "----- uniform initialization: " << std::endl;
     for (const auto& listItem : myList) {
@@ -103,7 +103,7 @@ int main()
     //
     // Similarly, uniform initialization also works on C++’s std::map and
     // unordered_map:
-    auto myDict = std::unordered_map < int, const char* > { { 5, "foo" }, {6, "bar"} };
+    auto myDict = std::unordered_map < int, const char* >{ { 5, "foo" }, {6, "bar"} };
     std::cout << "----- myDict[5]: " << std::endl;
     std::cout << myDict[5] << std::endl;
 
@@ -112,7 +112,7 @@ int main()
     //  myList.sort(key = lambda x: abs(x))
     //
     // Lambda expressions were added in C++11:
-    std::sort(myList.begin(), myList.end(), [] (int x, int y) { return std::abs(x) < std::abs(y); });
+    std::sort(myList.begin(), myList.end(), [](int x, int y) { return std::abs(x) < std::abs(y); });
     std::cout << "----- lambda sort: " << std::endl;
     for (const auto& listItem : myList) {
         std::cout << " " << listItem << std::endl;
@@ -127,8 +127,8 @@ int main()
     //
     // Likewise, C++ lambda expressions support a flexible set of capture rules,
     //  allowing you to do similar things:
-    auto adder = [] (int x) -> std::function < int(int) > {
-        return [=] (int y) { return x + y; };
+    auto adder = [](int x) -> std::function < int(int) > {
+        return [=](int y) { return x + y; };
     };
     std::cout << "----- adder: " << std::endl;
     std::cout << adder(5)(6) << std::endl;
@@ -140,8 +140,8 @@ int main()
     //
     // C++11 introduces std::copy_if, which lets us use a similar,
     // almost-functional style:
-    auto result = std::vector < int > {-6, 3, 123, 987, -555};
-    std::copy_if(myList.cbegin(), myList.cend(), std::back_inserter(result), [] (int x) { return x >= 0; });
+    auto result = std::vector < int >{ -6, 3, 123, 987, -555 };
+    std::copy_if(myList.cbegin(), myList.cend(), std::back_inserter(result), [](int x) { return x >= 0; });
     std::cout << "----- copy_if: " << std::endl;
     for (const auto& listItem : myList) {
         std::cout << " " << listItem << std::endl;
