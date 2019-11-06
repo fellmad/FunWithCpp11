@@ -9,17 +9,17 @@
 // https://code.msdn.microsoft.com/vstudio/CppResourceLeaks-ad3b7fdb
 
 void leaker1() {
-    char* buf = new char[1000] {'a', 'b', 'c'};
+    char* buf = new char[1000]{ 'a', 'b', 'c' };
     buf[3] = 'd';
 }
 
 void nonleaker1() {
-    std::unique_ptr <char> buf(new char[1000] {'a', 'b', 'c'});
+    std::unique_ptr <char> buf(new char[1000]{ 'a', 'b', 'c' });
     buf.get()[3] = 'd';
 }
 
 void nonleaker2() {
-    auto buf = std::make_unique < char[] > (1000);
+    auto buf = std::make_unique < char[] >(1000);
     buf[0] = 'a';
     buf[1] = 'b';
     buf[2] = 'c';
@@ -27,7 +27,7 @@ void nonleaker2() {
 }
 
 int main() {
-    _CrtMemState startMemState {};
+    _CrtMemState startMemState{};
     _CrtMemCheckpoint(&startMemState);
 
     for (auto index = 0; index < 10; index++) {
@@ -36,10 +36,10 @@ int main() {
         //nonleaker2();
     }
 
-    _CrtMemState currentMemState {};
+    _CrtMemState currentMemState{};
     _CrtMemCheckpoint(&currentMemState);
 
-    _CrtMemState result {};
+    _CrtMemState result{};
     auto memDiff = _CrtMemDifference(&result, &startMemState, &currentMemState);
     if (memDiff > 0) {
         _CrtDumpMemoryLeaks();  // output to debug window
