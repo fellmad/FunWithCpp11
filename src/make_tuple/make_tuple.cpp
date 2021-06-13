@@ -6,37 +6,38 @@
 // typedef std::tuple <bool, std::string, float> CommonTuple;
 
 // C++11: we're having FUN! (no ugly #typedef's):
-using CommonTuple = std::tuple < bool, std::string, float > ;
+using CommonTuple = std::tuple<bool, std::string, float>;
 
-CommonTuple f1() {
-    CommonTuple tup {true, "string from f1", 1.234f};
+CommonTuple f1()
+{
+    CommonTuple tup{true, "string from f1", 1.234f};
     return tup;
 }
 
-auto f2() ->CommonTuple {
+auto f2() -> CommonTuple
+{
     // http://en.cppreference.com/w/cpp/utility/tuple/forward_as_tuple
     return std::forward_as_tuple(false, "f2 string", 0.0f);
 }
 
-CommonTuple f3() {
-    bool aBool {false};
-    std::string aString {"a string"};
-    float floater {1.234f};
+CommonTuple f3()
+{
+    bool aBool{false};
+    std::string aString{"a string"};
+    float floater{1.234f};
     const auto tup = std::make_tuple(aBool, aString, floater);
     return tup;
 }
 
 // implement extraction operator for CommonTuple:
-std::ostream &operator << (std::ostream &os, CommonTuple tup) {
-    os <<
-        std::boolalpha <<
-        std::get<0>(tup) << "; " <<
-        std::get<1>(tup) << "; " <<
-        std::get<2>(tup);
+std::ostream &operator<<(std::ostream &os, CommonTuple tup)
+{
+    os << std::boolalpha << std::get<0>(tup) << "; " << std::get<1>(tup) << "; " << std::get<2>(tup);
     return os;
 }
 
-int main() {
+int main()
+{
 
     auto result1 = f1();
     std::cout << result1 << std::endl;
