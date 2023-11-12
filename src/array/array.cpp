@@ -9,11 +9,11 @@ int main()
 {
     // naked c-style arrays:
     char carray1[] = "Abc"; // caution, an unseen '\0' is added to the end
-    float carray2[] = {0.2f, 33.33f};
+    float carray2[] = { 0.2f, 33.33f };
 
     // C++11 std::arrays:
-    std::array<char, 3> cpparray1{{'A', 'b', 'c'}};
-    std::array<float, 2> cpparray2{{0.2f, 33.33f}};
+    std::array<char, 3> cpparray1{ {'A', 'b', 'c'} };
+    std::array<float, 2> cpparray2{ {0.2f, 33.33f} };
 
     // observation 1: the size must be deducible at compile time
     // observation 2: the array cannot be resized
@@ -34,7 +34,7 @@ int main()
     {
         cpparray2.at(-5) = 0.1f; // throws std::out_of_range exception
     }
-    catch (std::exception &e)
+    catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
