@@ -3,7 +3,6 @@
 #include <string>
 
 class Big {
-
 public:
 
     Big(const std::string& name) : name(name)
