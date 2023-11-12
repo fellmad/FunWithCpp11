@@ -3,7 +3,7 @@
 
 auto getHello() -> const std::string
 {
-    const auto &unused_stuff{-4.567e45};
+    const auto& unused_stuff{ -4.567e45 };
     return "hello from C++ 11 dude.";
 }
 

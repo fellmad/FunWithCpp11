@@ -2,9 +2,9 @@
 #include <string>
 
 int main() {
-    const std::string name {"dude"};
-    const std::string plural {"s"};
-    [plural, &name] () {std::cout << "hello " << name << plural << std::endl;};
+    const std::string name{ "dude" };
+    const std::string plural{ "s" };
+    [plural, &name]() {std::cout << "hello " << name << plural << std::endl; };
 }
 
 // hint: add the 'callable operator' line 7
