@@ -9,8 +9,8 @@ auto is_odd(int i) -> bool {
     return (i % 2) != 0;
 }
 
-void print(const std::vector <int> &vec) {
-    for (const auto &i : vec)
+void print(const std::vector <int>& vec) {
+    for (const auto& i : vec)
         std::cout << i << ' ';
     std::cout << std::endl;
 }
@@ -22,11 +22,21 @@ int main() {
     print(v);
 
     // removes all elements with the value 5
-    v.erase( std::remove( std::begin(v), std::end(v), 5 ), std::end(v) );
+    v.erase(
+        std::remove(
+            std::begin(v),
+            std::end(v),
+            5),
+        std::end(v));
     print(v);
 
     // removes all odd numbers
-    v.erase( std::remove_if(std::begin(v), std::end(v), is_odd), std::end(v) );
+    v.erase(
+        std::remove_if(
+            std::begin(v),
+            std::end(v),
+            is_odd),
+        std::end(v));
     print(v);
 }
 
