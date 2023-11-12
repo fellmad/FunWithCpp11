@@ -3,8 +3,8 @@ class A {};
 class B {
 public:
     B() = default;                      // constructor
-    B &operator= (const B &) = default; // assignment operator
-    B(const B &) = default;             // copy constructor
+    B& operator= (const B&) = default; // assignment operator
+    B(const B&) = default;             // copy constructor
     ~B() = default;                     // destructor
 };
 
@@ -15,7 +15,7 @@ int main()
         A a2(a1);   // copy ctor
         A a3 = a2;  // assignment operator
         a2 = a3;    // ditto
-                    // destructor - as it goes out of scope.
+        // destructor - as it goes out of scope.
     }
 
     {

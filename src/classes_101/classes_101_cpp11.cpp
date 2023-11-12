@@ -3,13 +3,13 @@ class A {};
 class B {
 public:
     B() = default;                      // constructor
-    B &operator= (const B &) = default; // assignment operator
-    B(const B &) = default;             // copy constructor
+    B& operator= (const B&) = default; // assignment operator
+    B(const B&) = default;             // copy constructor
     ~B() = default;                     // destructor
 
     // C++11:
-    B(B && b);                          // move constructor
-    B& operator = (B && b);             // move assignment operator
+    B(B&& b);                          // move constructor
+    B& operator = (B&& b);             // move assignment operator
 };
 
 int main()
