@@ -2,8 +2,7 @@
 #include <iostream>
 
 class Printer {
-
-	// "non-static data member with initializer (C++11)"
+    // "non-static data member with initializer (C++11)"
     int _jobCount = 3;
     std::string _name = "xps card printer";
 
