@@ -4,28 +4,26 @@
 class A
 {
 public:
-
     A() : _anInt(0)
     {
         // other things here in the constructor
     }
 
 private:
-
     int _anInt;
 
     // disable the assignment operator (=) and copy constructor by making private.
-    A &operator= (const A &) {}
-    A (const A &) {};
+    A &operator=(const A &) {}
+    A(const A &){};
 };
 
 class B
 {
 public:
-    B() : _anInt(0) {};
+    B() : _anInt(0){};
     // C++11:
-    B &operator= (const B &) = delete;
-    B (const B &) = delete;
+    B &operator=(const B &) = delete;
+    B(const B &) = delete;
 
 private:
     int _anInt;
