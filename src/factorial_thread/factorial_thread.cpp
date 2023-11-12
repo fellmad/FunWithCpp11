@@ -13,11 +13,11 @@ unsigned long long factorial(const unsigned long long currentNumber)  // C++11: 
     return result;
 }
 
-void sayHello(const int number, const short factorial_count)
+static void sayHello(const int number, const short factorial_count)
 {
     std::cout << "hello from a c++ 11 thread dude." << std::endl;
     std::cout << "getting factorial of " << number
-              << " " << factorial_count << " times." << std::endl;
+        << " " << factorial_count << " times." << std::endl;
 
     auto factorial_result = factorial(number);
     for (int factorialIndex(0); factorialIndex < 10000000; factorialIndex++) {
