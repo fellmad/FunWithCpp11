@@ -29,7 +29,7 @@ struct E : A
 
 struct F
 {
-    int &ref; // reference member
+    int& ref; // reference member
     const int c; // const member
     // F::F() is implicitly declared as deleted
 };
