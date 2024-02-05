@@ -3,12 +3,10 @@
 // https://msdn.microsoft.com/en-us/library/dn986850.aspx
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <filesystem>
 #include <iostream>
+#include <filesystem>   // need c++ 2017 or later
 
-// nov 11 2016: either of these namespace decl's work:
-// namespace fs = std::tr2::sys;   // 2014: <filesystem> approved by ISO c++ committee
-namespace fs = std::experimental::filesystem::v1;
+namespace fs = std::filesystem;
 
 int main() {
 
