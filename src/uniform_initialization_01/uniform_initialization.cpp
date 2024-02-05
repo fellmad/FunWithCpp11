@@ -1,6 +1,7 @@
-#include <vector>
-#include <iostream>
 #include <iomanip>
+#include <ios>
+#include <iostream>
+#include <vector>
 
 // compile with /EHsc, and /Fa to see .ASM output.
 
@@ -11,13 +12,13 @@ int main() {
     //char c2 {3.456};    // error C2397: conversion from 'double' to 'char' requires a narrowing conversion
     // char c3 = {3.456};  // ditto
 
-    char capitalLetter_A {65};  // ok; in range
-    double d1 {3};              // ok; in range - convert int to double;
+    char capitalLetter_A{ 65 };  // ok; in range
+    double d1{ 3 };              // ok; in range - convert int to double;
 
     using byte = unsigned char; // C++ does not have a 'byte' data type. (windows does...)
 
     // uniform initialization:
-    std::vector <byte> bytes {9, 2, 255, 34, 'x', 4, 9};
+    std::vector <byte> bytes{ 9, 2, 255, 34, 'x', 4, 9 };
 
     const auto& xPosition = std::find(bytes.cbegin(), bytes.cend(), 'x');
     bytes.insert(xPosition + 1, 'y');
@@ -38,11 +39,11 @@ int main() {
         sendBytes.push_back(0x12);
 
         // better; just like the C# sample:
-        std::vector <byte> sendBytes2 {0x00, 0xC0, 0x00, 0x00, 0x12};
+        std::vector <byte> sendBytes2{ 0x00, 0xC0, 0x00, 0x00, 0x12 };
     }
 
     // any difference here? view .ASM:
     short y0 = -123;
-    short y1 = {-123};
-    short y2 {-123};
+    short y1 = { -123 };
+    short y2{ -123 };
 }
