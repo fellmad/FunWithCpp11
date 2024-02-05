@@ -1,14 +1,15 @@
 // stolen from: http://en.cppreference.com/w/cpp/memory/unique_ptr/make_unique
 
+#include <cstddef>
+#include <iomanip>
 #include <iostream>
 #include <memory>
+#include <utility>
 
 class ThreeIntVector {
-
     int x, y, z;
 
 public:
-
     ThreeIntVector() : x(0), y(0), z(0)
     {}
 
@@ -30,7 +31,7 @@ int main()
     std::unique_ptr<ThreeIntVector> v2 = std::make_unique<ThreeIntVector>(0, 1, 2);
 
     // Create a unique_ptr to an array of 5 elements
-    std::unique_ptr<ThreeIntVector[]> v3 = std::make_unique<ThreeIntVector[]> (5);
+    std::unique_ptr<ThreeIntVector[]> v3 = std::make_unique<ThreeIntVector[]>(5);
 
     std::cout
         << "make_unique<Vec3>():      " << *v1 << '\n'
