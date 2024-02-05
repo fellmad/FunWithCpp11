@@ -1,12 +1,12 @@
 // munged from: http://stackoverflow.com/questions/236129/split-a-string-in-c
 
 #include <iostream>
-#include <vector>
-#include <sstream>
 #include <memory>
+#include <sstream>
+#include <vector>
 
 template <typename T>
-std::vector <T> split(const T & str, const T & delimiters)
+std::vector <T> split(const T& str, const T& delimiters)
 {
     std::vector<T> individual_items;
     T::size_type start = 0;
@@ -26,14 +26,14 @@ std::vector <T> split(const T & str, const T & delimiters)
 }
 
 int main() {
-    size_t requred_size {};
+    size_t requred_size{};
     getenv_s(&requred_size, nullptr, 0, "path");
     if (0 == requred_size) {
         std::cerr << "env var path not found" << std::endl;
         return -1;
     }
 
-    std::unique_ptr <char> buf {new char[requred_size] {} };
+    std::unique_ptr <char> buf{ new char[requred_size] {} };
 
     ::getenv_s(&requred_size, buf.get(), requred_size, "path");
 
