@@ -2,9 +2,8 @@
 #include <string>
 #include <tuple>
 
-// old:
-// typedef std::tuple <bool, std::string, float> CommonTuple;
-
+// old: typedef std::tuple <bool, std::string, float> CommonTuple;
+//
 // C++11: we're having FUN! (no ugly #typedef's):
 using CommonTuple = std::tuple<bool, std::string, float>;
 
